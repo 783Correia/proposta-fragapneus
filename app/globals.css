@@ -22,6 +22,85 @@ body {
   background-attachment: fixed;
 }
 
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+
+/* Entregáveis item — 3-col grid that collapses on mobile */
+.entregavel-item {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Resumo — 2-col with large gap that collapses on mobile */
+.resumo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  /* Section padding */
+  .resp-section {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .resp-inner {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* Hero */
+  .hero-section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-bottom: 56px !important;
+  }
+  .hero-badge {
+    display: none !important;
+  }
+  .hero-desc {
+    max-width: 100% !important;
+    font-size: 15px !important;
+  }
+
+  /* Grids collapse to 1 col */
+  .entregavel-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 20px !important;
+  }
+  .entregavel-tag {
+    display: none !important;
+  }
+  .resumo-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Nav brand smaller */
+  .nav-brand {
+    font-size: 16px !important;
+  }
+
+  /* Section title */
+  .section-title-main {
+    font-size: clamp(28px, 9vw, 52px) !important;
+    margin-bottom: 32px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Tablet: section padding */
+  .resp-section {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+}
+
 body::after {
   content: "";
   position: fixed;

@@ -73,6 +73,7 @@ function NavSection() {
         }}
       >
         <span
+          className="nav-brand"
           style={{
             fontFamily: "var(--font-bebas)",
             fontSize: 20,
@@ -137,6 +138,7 @@ function NavSection() {
 function HeroSection() {
   return (
     <section
+      className="hero-section"
       style={{
         minHeight: "100vh",
         display: "flex",
@@ -216,6 +218,7 @@ function HeroSection() {
           }}
         >
           <p
+            className="hero-desc"
             style={{
               fontFamily: "var(--font-dm)",
               fontSize: 16,
@@ -230,7 +233,7 @@ function HeroSection() {
             altura do negócio — para que novos clientes te encontrem, confiem e
             convertam antes de pegar o telefone.
           </p>
-          <div style={{ textAlign: "right" }}>
+          <div className="hero-badge" style={{ textAlign: "right" }}>
             <div
               style={{
                 fontFamily: "var(--font-bebas)",
@@ -340,6 +343,7 @@ function DiagnosticoSection() {
   return (
     <section
       id="diagnostico"
+      className="resp-section"
       style={{ padding: "100px 32px", maxWidth: 1280, margin: "0 auto" }}
     >
       <motion.div
@@ -357,12 +361,8 @@ function DiagnosticoSection() {
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
         variants={stagger}
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          gap: 2,
-        }}
-        className="md:grid-cols-2 grid-cols-1"
+        className="grid grid-cols-1 md:grid-cols-2"
+        style={{ gap: 2 }}
       >
         {cards.map((card) => (
           <motion.div
@@ -469,6 +469,7 @@ function EstrategiaSection() {
   return (
     <section
       id="estrategia"
+      className="resp-section"
       style={{ backgroundColor: "#101010", padding: "100px 32px" }}
     >
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
@@ -487,12 +488,8 @@ function EstrategiaSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 2,
-          }}
-          className="grid-cols-2 md:grid-cols-4"
+          className="grid grid-cols-2 md:grid-cols-4"
+          style={{ gap: 2 }}
         >
           {pilares.map((p) => (
             <motion.div
@@ -607,6 +604,7 @@ function EntregaveisSection() {
   return (
     <section
       id="entregaveis"
+      className="resp-section"
       style={{ padding: "100px 32px" }}
     >
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
@@ -632,13 +630,10 @@ function EntregaveisSection() {
               key={item.n}
               variants={fadeUp}
               whileHover={{ backgroundColor: "#0d0d0d" }}
+              className="entregavel-item"
               style={{
                 backgroundColor: "#090909",
                 padding: "28px 32px",
-                display: "grid",
-                gridTemplateColumns: "56px 1fr auto",
-                gap: 24,
-                alignItems: "center",
                 transition: "background-color 0.3s",
               }}
             >
@@ -679,6 +674,7 @@ function EntregaveisSection() {
                 </p>
               </div>
               <div
+                className="entregavel-tag"
                 style={{
                   fontFamily: "var(--font-barlow)",
                   fontSize: 12,
@@ -790,6 +786,7 @@ function CalendarioSection() {
   return (
     <section
       id="conteudo"
+      className="resp-section"
       style={{ backgroundColor: "#101010", padding: "100px 32px" }}
     >
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
@@ -860,12 +857,8 @@ function CalendarioSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 2,
-          }}
-          className="grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+          style={{ gap: 2 }}
         >
           {weeks.map((week) => (
             <motion.div
@@ -978,7 +971,7 @@ function RoteirosSection() {
   ];
 
   return (
-    <section id="roteiros" style={{ padding: "100px 32px" }}>
+    <section id="roteiros" className="resp-section" style={{ padding: "100px 32px" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
         <motion.div
           initial="hidden"
@@ -995,12 +988,8 @@ function RoteirosSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: 2,
-          }}
-          className="grid-cols-1 md:grid-cols-2"
+          className="grid grid-cols-1 md:grid-cols-2"
+          style={{ gap: 2 }}
         >
           {roteiros.map((r) => (
             <motion.div
@@ -1097,6 +1086,7 @@ function AnunciosSection() {
   return (
     <section
       id="anuncios"
+      className="resp-section"
       style={{ backgroundColor: "#101010", padding: "100px 32px" }}
     >
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
@@ -1115,13 +1105,8 @@ function AnunciosSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: 2,
-            marginBottom: 2,
-          }}
-          className="grid-cols-1 md:grid-cols-2"
+          className="grid grid-cols-1 md:grid-cols-2"
+          style={{ gap: 2, marginBottom: 2 }}
         >
           {/* Meta Ads */}
           <motion.div
@@ -1399,6 +1384,7 @@ function CronogramaSection() {
   return (
     <section
       id="timeline"
+      className="resp-section"
       style={{ padding: "100px 32px" }}
     >
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
@@ -1417,12 +1403,8 @@ function CronogramaSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 2,
-          }}
-          className="grid-cols-2 md:grid-cols-4"
+          className="grid grid-cols-2 md:grid-cols-4"
+          style={{ gap: 2 }}
         >
           {fases.map((fase) => (
             <motion.div
@@ -1516,6 +1498,7 @@ function InvestimentoSection() {
   return (
     <section
       id="investimento"
+      className="resp-section"
       style={{ backgroundColor: "#101010", padding: "100px 32px" }}
     >
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
@@ -1534,13 +1517,8 @@ function InvestimentoSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: 2,
-            marginBottom: 2,
-          }}
-          className="grid-cols-1 md:grid-cols-2"
+          className="grid grid-cols-1 md:grid-cols-2"
+          style={{ gap: 2, marginBottom: 2 }}
         >
           {/* Setup card */}
           <motion.div
@@ -1779,7 +1757,7 @@ function ResumoSection() {
   ];
 
   return (
-    <section style={{ backgroundColor: "#F5C800", padding: "100px 32px" }}>
+    <section className="resp-section" style={{ backgroundColor: "#F5C800", padding: "100px 32px" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
         <motion.div
           initial="hidden"
@@ -1819,13 +1797,7 @@ function ResumoSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 64,
-            alignItems: "center",
-          }}
-          className="grid-cols-1 md:grid-cols-2"
+          className="resumo-grid grid"
         >
           {/* Left: breakdown */}
           <motion.div variants={fadeUp}>
@@ -1920,6 +1892,7 @@ function ResumoSection() {
 function CTASection() {
   return (
     <section
+      className="resp-section"
       style={{ padding: "120px 32px", position: "relative", overflow: "hidden" }}
     >
       {/* Decorative text */}
