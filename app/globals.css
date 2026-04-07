@@ -4,6 +4,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 *,
@@ -16,6 +18,7 @@ body {
   background: #080808;
   color: #ffffff;
   overflow-x: hidden;
+  max-width: 100%;
   background-image: linear-gradient(rgba(245, 200, 0, 0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(245, 200, 0, 0.025) 1px, transparent 1px);
   background-size: 48px 48px;
@@ -23,6 +26,61 @@ body {
 }
 
 /* ─── Responsive ──────────────────────────────────────────────────────────── */
+
+/* Cronograma carrossel mobile */
+.cronograma-scroll {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+.cronograma-card {
+  /* desktop: normal */
+}
+.cronograma-hint {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .cronograma-scroll {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 2px;
+    /* Contain the scroll — page não abre pro lado */
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .cronograma-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .cronograma-card {
+    min-width: 78vw;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+  .cronograma-hint {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-family: var(--font-barlow);
+    font-size: 12px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cronograma-scroll {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 /* Entregáveis item — 3-col grid that collapses on mobile */
 .entregavel-item {
@@ -38,6 +96,12 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 64px;
   align-items: center;
+}
+
+/* Prevent any section from bleeding out */
+section, main {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 @media (max-width: 767px) {

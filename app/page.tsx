@@ -81,7 +81,7 @@ function NavSection() {
             letterSpacing: "0.05em",
           }}
         >
-          ONETECH × FRAGA PNEUS
+          YURI CORREIA × FRAGA PNEUS
         </span>
         <div
           className="hidden md:flex"
@@ -1293,7 +1293,7 @@ function AnunciosSection() {
             }}
           >
             Os R$1.200/mês de verba são pagos diretamente às plataformas pela
-            Fraga. Esse valor não entra no honorário da Onetech — vai 100% pra
+            Fraga. Esse valor não entra no meu honorário — vai 100% pra
             mídia. Eu gerencio onde e como é investido pra ter o máximo de
             retorno.
           </p>
@@ -1398,18 +1398,24 @@ function CronogramaSection() {
           <SectionTitle>O que acontece em cada fase</SectionTitle>
         </motion.div>
 
+        {/* Swipe hint — visível só no mobile via CSS */}
+        <div className="cronograma-hint">
+          <span style={{ color: "#F5C800" }}>→</span>
+          Arraste para ver as fases
+        </div>
+
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
-          className="grid grid-cols-2 md:grid-cols-4"
-          style={{ gap: 2 }}
+          className="cronograma-scroll"
         >
           {fases.map((fase) => (
             <motion.div
               key={fase.mes}
               variants={fadeUp}
+              className="cronograma-card"
               style={{
                 backgroundColor: fase.active ? "#F5C800" : "#0d0d0d",
                 color: fase.active ? "#000" : "#fff",
@@ -1706,7 +1712,7 @@ function InvestimentoSection() {
             Além dos honorários acima, é necessária uma verba de R$1.200/mês
             investida diretamente nas plataformas de anúncio (Meta + Google).
             Esse valor é pago pela Fraga direto nas plataformas e não passa pela
-            Onetech — 100% vai pra mídia.
+            minha gestão — 100% vai pra mídia.
           </p>
           <div style={{ textAlign: "right", flexShrink: 0 }}>
             <div
@@ -2025,7 +2031,7 @@ function FooterSection() {
           letterSpacing: "0.05em",
         }}
       >
-        ONETECH
+        YURI CORREIA
       </span>
       <span
         style={{
@@ -2037,7 +2043,7 @@ function FooterSection() {
           textAlign: "right",
         }}
       >
-        Yuri Correia · Onetech · Lagoa Vermelha RS / Estratégia + Proposta ·
+        Yuri Correia · Lagoa Vermelha RS / Estratégia + Proposta ·
         Fraga Pneus · 2025
       </span>
     </motion.footer>
