@@ -180,7 +180,7 @@ function HeroSection() {
             marginBottom: 32,
           }}
         >
-          Estratégia + Proposta Comercial · Fraga Pneus · 2025
+          Estratégia + Proposta Comercial · Fraga Pneus · 2026
         </motion.div>
 
         {/* Title */}
@@ -2044,7 +2044,7 @@ function FooterSection() {
         }}
       >
         Yuri Correia · Lagoa Vermelha RS / Estratégia + Proposta ·
-        Fraga Pneus · 2025
+        Fraga Pneus · 2026
       </span>
     </motion.footer>
   );
